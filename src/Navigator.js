@@ -37,7 +37,6 @@ import {
   View,
   ViewPropTypes,
 } from 'react-native';
-import PropTypes from 'prop-types';
 
 var AnimationsDebugModule = NativeModules.AnimationsDebugModule;
 var InteractionMixin = require('./InteractionMixin');
@@ -52,8 +51,9 @@ var TimerMixin = require('react-timer-mixin');
 var clamp = require('./clamp');
 var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
-
 var flattenStyle = require('./flattenStyle');
+
+const PropTypes = require('prop-types');
 
 // TODO: this is not ideal because there is no guarantee that the navigator
 // is full screen, however we don't have a good way to measure the actual
@@ -477,6 +477,7 @@ var Navigator = React.createClass({
   },
 
   componentDidMount: function() {
+    this._isMounted = true;
     this._handleSpringUpdate();
     this._emitDidFocus(this.state.routeStack[this.state.presentedIndex]);
     this._enableTVEventHandler();
@@ -571,7 +572,7 @@ var Navigator = React.createClass({
    * happening, we only set values for the transition and the gesture will catch up later
    */
   _handleSpringUpdate: function() {
-    if (!this.isMounted()) {
+    if (!this._isMounted) {
       return;
     }
     // Prioritize handling transition in progress over a gesture:
@@ -595,7 +596,7 @@ var Navigator = React.createClass({
    * This happens at the end of a transition started by transitionTo, and when the spring catches up to a pending gesture
    */
   _completeTransition: function() {
-    if (!this.isMounted()) {
+    if (!this._isMounted) {
       return;
     }
 
