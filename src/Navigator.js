@@ -35,7 +35,9 @@ import {
   StyleSheet,
   TVEventHandler,
   View,
+  ViewPropTypes,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 var AnimationsDebugModule = NativeModules.AnimationsDebugModule;
 var InteractionMixin = require('./InteractionMixin');
@@ -52,8 +54,6 @@ var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
 
 var flattenStyle = require('./flattenStyle');
-
-var PropTypes = React.PropTypes;
 
 // TODO: this is not ideal because there is no guarantee that the navigator
 // is full screen, however we don't have a good way to measure the actual
@@ -391,7 +391,7 @@ var Navigator = React.createClass({
     /**
      * Styles to apply to the container of each scene.
      */
-    sceneStyle: View.propTypes.style,
+    sceneStyle: ViewPropTypes.style,
   },
 
   statics: {
