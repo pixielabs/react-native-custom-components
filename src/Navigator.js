@@ -297,7 +297,8 @@ var GESTURE_ACTIONS = [
  * See `Navigator.SceneConfigs` for default animations and more info on
  * available [scene config options](docs/navigator.html#configurescene).
  */
-var Navigator = React.createClass({
+let createReactClass = require('create-react-class');
+let Navigator = createReactClass({
 
   propTypes: {
     /**
