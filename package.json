@@ -1,6 +1,6 @@
 {
   "name": "react-native-deprecated-custom-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deprecated custom components that originally shipped with React Native",
   "repository": {
     "type": "git",
@@ -14,6 +14,8 @@
     "clamp": "^1.0.1",
     "fbjs": "~0.8.9",
     "immutable": "~3.7.6",
+    "create-react-class": "15.6.0",
+    "prop-types": "^15.5.10",
     "react-timer-mixin": "^0.13.2",
     "rebound": "^0.0.13"
   },
