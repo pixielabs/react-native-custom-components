@@ -40,7 +40,7 @@ const React = require('react');
 const {NativeModules, StyleSheet, View} = require('react-native');
 
 const {NativeAnimatedModule} = NativeModules;
-const {PropTypes} = React;
+const PropTypes = require('prop-types');
 const {Directions} = NavigationCardStackPanResponder;
 
 import type {
