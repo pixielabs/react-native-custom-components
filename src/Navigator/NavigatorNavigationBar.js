@@ -36,6 +36,8 @@ import {
 } from 'react-native';
 var PropTypes = require('prop-types');
 
+const PropTypes = require('prop-types');
+
 var guid = require('./guid');
 
 var { Map } = require('immutable');

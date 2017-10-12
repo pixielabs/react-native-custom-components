@@ -52,10 +52,9 @@ var createReactClass = require('create-react-class');
 var clamp = require('./clamp');
 var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
-
 var flattenStyle = require('./flattenStyle');
 
-var PropTypes = require('prop-types');
+const PropTypes = require('prop-types');
 
 // TODO: this is not ideal because there is no guarantee that the navigator
 // is full screen, however we don't have a good way to measure the actual
