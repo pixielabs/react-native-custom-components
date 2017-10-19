@@ -37,7 +37,7 @@ const NavigationCardStackStyleInterpolator = require('./NavigationCardStackStyle
 const NavigationPropTypes = require('./NavigationPropTypes');
 const NavigationTransitioner = require('./NavigationTransitioner');
 const React = require('react');
-const {NativeModules, StyleSheet, View} = require('react-native');
+const {NativeModules, StyleSheet, View, ViewPropTypes} = require('react-native');
 
 const {NativeAnimatedModule} = NativeModules;
 const PropTypes = require('prop-types');
@@ -200,12 +200,12 @@ class NavigationCardStack extends React.Component<DefaultProps, Props, void> {
     /**
      * Custom style applied to the cards stack.
      */
-    style: View.propTypes.style,
+    style: ViewPropTypes.style,
 
     /**
      * Custom style applied to the scenes stack.
      */
-    scenesStyle: View.propTypes.style,
+    scenesStyle: ViewPropTypes.style,
   };
 
   static defaultProps: DefaultProps = {
